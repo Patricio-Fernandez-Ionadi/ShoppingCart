@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { FiltersContext } from "./";
+import { FiltersContext } from ".";
 
 // Proveedor
 export function FiltersProvider({ children }) {

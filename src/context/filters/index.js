@@ -1,2 +1,2 @@
-export * from './filtersContext';
-export * from './filtersProvider';
+export * from './FiltersContext';
+export * from './FiltersProvider';
