@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Filters } from "./Filters";
+import {Filters} from './'
 
 export function Header({changeFilters}) {
   return (
