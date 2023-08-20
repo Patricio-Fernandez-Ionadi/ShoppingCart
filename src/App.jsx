@@ -1,30 +1,16 @@
 /* eslint-disable no-unused-vars */
-import { products as initialProducts } from "./mocks/products.json"
-import { Products } from "./components/Products"
 import { useState } from "react"
-import { Header } from "./components/Header"
 
+import { products as initialProducts } from "./mocks/products.json"
+
+import { useFilters } from "./hooks"
+
+import { Footer, Header, Products } from "./components"
 
 function App() {
 
   const [products] = useState(initialProducts)
-  const [filters, setFilters] = useState({
-    category: 'all',
-    minPrice: 0
-  })
-
-  const filterProducts = (products) => {
-    return products.filter(prod => {
-      return (
-        prod.price >= filters.minPrice &&
-        (
-          filters.category === 'all' ||
-          prod.category === filters.category
-        )
-      )
-    })
-  }
-
+  const {filters, filterProducts, setFilters} = useFilters()
   const filteredProducts = filterProducts(products)
 
   return (
@@ -32,6 +18,7 @@ function App() {
       <h1>Shopping Cart 🛒</h1>
       <Header changeFilters={setFilters}/>
       <Products products={filteredProducts}/>
+      <Footer filters={filters}/>
     </>
   )
 }
