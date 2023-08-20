@@ -1,17 +1,15 @@
 /* eslint-disable react/prop-types */
-import { useFilters } from '../hooks'
-import './Footer.css'
+import { useFilters } from "../hooks";
+import "./Footer.css";
 
-export function Footer () {
-  const { filters } = useFilters()
+export function Footer() {
+	const { filters } = useFilters();
 
-  return (
-    <footer className='footer'>
-			{
-				JSON.stringify(filters, null, 2)
-			}
-      {/* <h4>Prueba técnica de React ⚛️ － <span>P0K3R</span></h4>
+	return (
+		<footer className="footer">
+			{JSON.stringify(filters, null, 2)}
+			{/* <h4>Prueba técnica de React ⚛️ － <span>P0K3R</span></h4>
       <h5>Shopping Cart con useContext & useReducer</h5> */}
-    </footer>
-  )
+		</footer>
+	);
 }
